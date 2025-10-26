@@ -31,6 +31,22 @@ Fast access to essential information:
 - Quick troubleshooting tips
 - Best practices summary
 
+### 4. [Tips and Tricks](TIPS_AND_TRICKS.md)
+Advanced techniques for power users:
+- Pro tips for maximum efficiency
+- Speed hacks and workflow optimization
+- Framework-specific tricks
+- Hidden features and expert tactics
+- Measuring productivity improvements
+
+### 5. [Complete Code Examples](CODE_EXAMPLES.md)
+Ready-to-use code examples:
+- Express.js REST API server
+- Python web scraper and data analyzer
+- React custom hooks and forms
+- Real-world implementations
+- Copy-paste templates
+
 ## 🚀 Quick Start
 
 1. **Install GitHub Copilot**
