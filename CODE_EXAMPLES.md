@@ -9,11 +9,6 @@ Ready-to-use code examples demonstrating Copilot's capabilities across different
 1. [JavaScript/Node.js Examples](#javascriptnodejs-examples)
 2. [Python Examples](#python-examples)
 3. [TypeScript/React Examples](#typescriptreact-examples)
-4. [Java Examples](#java-examples)
-5. [Database Examples](#database-examples)
-6. [API Examples](#api-examples)
-7. [Testing Examples](#testing-examples)
-8. [Utility Functions](#utility-functions)
 
 ---
 
@@ -30,6 +25,13 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
 const app = express();
+
+// IMPORTANT: Set JWT_SECRET environment variable before running
+// Example: export JWT_SECRET="your-secret-key-here"
+if (!process.env.JWT_SECRET) {
+    console.error('ERROR: JWT_SECRET environment variable is not set!');
+    process.exit(1);
+}
 
 // Middleware
 app.use(cors());
@@ -60,7 +62,11 @@ const authenticateToken = (req, res, next) => {
         return res.status(401).json({ error: 'Access denied' });
     }
 
-    jwt.verify(token, process.env.JWT_SECRET || 'secret', (err, user) => {
+    if (!process.env.JWT_SECRET) {
+        return res.status(500).json({ error: 'Server configuration error' });
+    }
+    
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
         if (err) {
             return res.status(403).json({ error: 'Invalid token' });
         }
@@ -128,9 +134,13 @@ app.post('/api/login', async (req, res) => {
         }
 
         // Generate token
+        if (!process.env.JWT_SECRET) {
+            return res.status(500).json({ error: 'Server configuration error' });
+        }
+        
         const token = jwt.sign(
             { userId: user._id, email: user.email },
-            process.env.JWT_SECRET || 'secret',
+            process.env.JWT_SECRET,
             { expiresIn: '24h' }
         );
 
