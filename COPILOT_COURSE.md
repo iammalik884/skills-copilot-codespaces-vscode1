@@ -1,7 +1,7 @@
 # GitHub Copilot: Complete Course from Basic to Advanced
 
 ## Table of Contents
-1. [Introduction to GitHub Copilot](#introduction)
+1. [Introduction to GitHub Copilot](#introduction-to-github-copilot)
 2. [Getting Started](#getting-started)
 3. [Installation Guide](#installation-guide)
 4. [Using Copilot in VS Code](#using-copilot-in-vs-code)
@@ -13,7 +13,7 @@
 
 ---
 
-## Introduction to GitHub Copilot {#introduction}
+## Introduction to GitHub Copilot
 
 ### What is GitHub Copilot?
 GitHub Copilot is an AI-powered code completion tool developed by GitHub and OpenAI. It acts as your "AI pair programmer" that helps you write code faster and with less effort.
@@ -36,7 +36,7 @@ GitHub Copilot is an AI-powered code completion tool developed by GitHub and Ope
 
 ---
 
-## Getting Started {#getting-started}
+## Getting Started
 
 ### Prerequisites
 Before installing GitHub Copilot, you need:
@@ -55,7 +55,7 @@ Before installing GitHub Copilot, you need:
 
 ---
 
-## Installation Guide {#installation-guide}
+## Installation Guide
 
 ### Step 1: Verify GitHub Copilot Access
 
@@ -101,7 +101,7 @@ code --install-extension GitHub.copilot-chat
 
 ---
 
-## Using Copilot in VS Code {#using-copilot-in-vs-code}
+## Using Copilot in VS Code
 
 ### Understanding the Interface
 
@@ -147,7 +147,7 @@ code --install-extension GitHub.copilot-chat
 
 ---
 
-## Basic Features {#basic-features}
+## Basic Features
 
 ### 1. Code Completion
 
@@ -234,7 +234,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ name, email, avatar }) => {
 
 ---
 
-## Intermediate Techniques {#intermediate-techniques}
+## Intermediate Techniques
 
 ### 1. Working with APIs
 
@@ -270,7 +270,7 @@ async function fetchUserData(userId) {
 Copilot generates:
 ```python
 active_users = session.query(User)\
-    .filter(User.is_active == True)\
+    .filter(User.is_active)\
     .order_by(User.registration_date.desc())\
     .all()
 ```
@@ -356,7 +356,7 @@ Copilot generates:
 
 ---
 
-## Advanced Usage {#advanced-usage}
+## Advanced Usage
 
 ### 1. Context-Aware Suggestions
 
@@ -486,7 +486,7 @@ Create a `.github/copilot-instructions.md` file in your project:
 
 ---
 
-## Best Practices {#best-practices}
+## Best Practices
 
 ### 1. Write Clear Comments
 
@@ -607,7 +607,7 @@ Use Copilot to learn:
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Troubleshooting
 
 ### Common Issues and Solutions
 
